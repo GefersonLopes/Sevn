@@ -4,9 +4,6 @@ import common from "../../shared/utils/common";
 import "./paragraph.css";
 
 export default class Paragraph {
-  static companie = common.companie;
-  static icon = common.icon;
-
   static render() {
     Calls.generateHandlebars({
       context: common,
