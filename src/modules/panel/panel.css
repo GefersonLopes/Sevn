@@ -15,6 +15,21 @@
 
   padding: 20px 0;
   border-bottom: 1px solid #e0e0e0;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .match-item:last-child {
@@ -31,42 +46,6 @@
   height: 40px;
   margin-right: 10px;
 }
-
-/* Time A - Vermelho */
-.logo-red {
-  filter: hue-rotate(0deg) saturate(200%) brightness(100%);
-}
-
-/* Time B - Azul */
-.logo-blue {
-  filter: hue-rotate(240deg) saturate(200%) brightness(100%);
-}
-
-/* Time C - Laranja */
-.logo-orange {
-  filter: hue-rotate(30deg) saturate(200%) brightness(100%);
-}
-
-/* Time D - Verde */
-.logo-green {
-  filter: hue-rotate(120deg) saturate(200%) brightness(100%);
-}
-
-/* Time E - Ciano */
-.logo-cyan {
-  filter: hue-rotate(180deg) saturate(200%) brightness(100%);
-}
-
-/* Time F - Azul Claro */
-.logo-light-blue {
-  filter: hue-rotate(200deg) saturate(200%) brightness(100%);
-}
-
-/* Time G e H - Roxo */
-.logo-purple {
-  filter: hue-rotate(270deg) saturate(200%) brightness(100%);
-}
-
 
 .team-name {
   font-weight: bold;
