@@ -24,8 +24,6 @@ export default class RoundNavigation {
   static addEventListeners() {
     const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");
-    const currentRoundElement = document.querySelector(".current-round");
-    const ul = document.querySelector("ul");
 
     if (this.currentRound === 1) {
       prevButton?.classList.add("disabled");
@@ -42,24 +40,32 @@ export default class RoundNavigation {
     prevButton?.addEventListener("click", () => {
       if (this.currentRound > 1) {
         this.currentRound--;
-        if (currentRoundElement !== null) {
-          if (ul) ul.remove();
-          Panel.render();
-        }
-        this.updateButtonsState(prevButton, nextButton);
+        this.updateCurrentRoundAndPanel(prevButton, nextButton);
       }
     });
 
     nextButton?.addEventListener("click", () => {
       if (this.currentRound < Main.matches.length) {
         this.currentRound++;
-        if (currentRoundElement !== null) {
-          if (ul) ul.remove();
-          Panel.render();
-        }
-        this.updateButtonsState(prevButton, nextButton);
+        this.updateCurrentRoundAndPanel(prevButton, nextButton);
       }
     });
+  }
+
+  static updateCurrentRoundAndPanel(
+    prevButton: Element | null,
+    nextButton: Element | null
+  ) {
+    const currentRoundElement = document.querySelector(".current-round");
+    if (!currentRoundElement) return;
+    currentRoundElement.textContent = `RODADA ${this.currentRound}`;
+
+    let panel = document.getElementsByClassName("match-item");
+    Array.from(panel).forEach((element) => element.remove())
+
+    Panel.render();
+
+    this.updateButtonsState(prevButton, nextButton);
   }
 
   static updateButtonsState(

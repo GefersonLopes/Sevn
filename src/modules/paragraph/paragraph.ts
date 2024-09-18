@@ -8,6 +8,7 @@ export default class Paragraph {
     Calls.generateHandlebars({
       context: common,
       templateSourcePath: "paragraph",
+      tagName: "section",
     });
   }
 }

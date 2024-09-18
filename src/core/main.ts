@@ -7,6 +7,7 @@ import Panel from "../modules/panel/panel";
 
 import Api from "../shared/service/api";
 import { Matches } from "../shared/interfaces";
+import RoundNavigation from "../modules/rounds/rounds";
 
 export default class Main {
   static matches: Matches = [];
@@ -20,5 +21,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   Header.render();
   Paragraph.render();
+  RoundNavigation.render();
   Panel.render();
 });

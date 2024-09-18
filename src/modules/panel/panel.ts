@@ -30,10 +30,8 @@ export default class Panel {
     const template = Handlebars.compile(templateSource);
     const compiledHTML = template({ matches });
 
-    const app = document.getElementById("app");
+    const ul = document.querySelector("ul");
 
-    app?.insertAdjacentHTML("beforeend", compiledHTML);
-
-    RoundNavigation.render();
+    ul?.insertAdjacentHTML("beforeend", compiledHTML);
   }
 }

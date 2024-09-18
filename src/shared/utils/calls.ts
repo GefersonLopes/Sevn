@@ -8,6 +8,7 @@ export default class Calls {
   static async generateHandlebars({
     context,
     templateSourcePath,
+    tagName,
   }: IHandlebars) {
     const fileName = templateSourcePath;
     const path = `/src/modules/${fileName}/${fileName}.hbs`;
@@ -18,8 +19,12 @@ export default class Calls {
 
     const compiledHTML = template(context);
 
-    const app = document.querySelector("#app");
+    let itemHTML = document.querySelector(`${fileName}`);
 
-    app?.insertAdjacentHTML("beforeend", compiledHTML);
+    if (!itemHTML) {
+      itemHTML = document.querySelector(`${tagName}`);
+    }
+
+    itemHTML?.insertAdjacentHTML("beforeend", compiledHTML);
   }
 }
