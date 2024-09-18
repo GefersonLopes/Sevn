@@ -3,6 +3,8 @@ import "./rounds.css";
 import Main from "../../core/main";
 import Panel from "../panel/panel";
 
+import common from "../../shared/utils/common";
+
 import Handlebars from "handlebars";
 
 export default class RoundNavigation {
@@ -13,7 +15,7 @@ export default class RoundNavigation {
       (res) => res.text()
     );
     const template = Handlebars.compile(templateSource);
-    const compiledHTML = template({ currentRound: this.currentRound });
+    const compiledHTML = template({ currentRound: this.currentRound, ...common });
 
     const ul = document.querySelector("ul");
     ul?.insertAdjacentHTML("afterbegin", compiledHTML);
@@ -58,10 +60,10 @@ export default class RoundNavigation {
   ) {
     const currentRoundElement = document.querySelector(".current-round");
     if (!currentRoundElement) return;
-    currentRoundElement.textContent = `RODADA ${this.currentRound}`;
+    currentRoundElement.textContent = `${common.panelDescription} ${this.currentRound}`;
 
     let panel = document.getElementsByClassName("match-item");
-    Array.from(panel).forEach((element) => element.remove())
+    Array.from(panel).forEach((element) => element.remove());
 
     Panel.render();
 
