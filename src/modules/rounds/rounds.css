@@ -1,0 +1,40 @@
+.round-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 20px 0 40px 0;
+}
+
+.round-button {
+  background-color: #33B667;
+  
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.round-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.round-title {
+  text-align: center;
+}
+
+.round-title h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.round-title h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
