@@ -1,0 +1,19 @@
+<ul class="match-list">
+  {{#each matches}}
+  <li class="match-item">
+    <div class="team">
+      <img src="{{teamA.logo}}" alt="Logo {{teamA.name}}" class="team-logo logo-{{teamA.color}}" />
+      <span class="team-name">{{teamA.name}}</span>
+    </div>
+    <div class="score">
+      <span class="team-score">{{teamA.score}}</span>
+      <span class="versus">×</span>
+      <span class="team-score">{{teamB.score}}</span>
+    </div>
+    <div class="team">
+      <img src="{{teamB.logo}}" alt="Logo {{teamB.name}}" class="team-logo logo-{{teamB.color}}" />
+      <span class="team-name">{{teamB.name}}</span>
+    </div>
+  </li>
+  {{/each}}
+</ul>

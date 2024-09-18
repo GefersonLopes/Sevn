@@ -1,0 +1,86 @@
+.match-list {
+  width: 340px;
+  margin: 0 auto;
+
+  padding: 20px;
+
+  border: 1px solid #e0e0e0;
+  border-radius: 7px;
+}
+
+.match-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.match-item:last-child {
+  border-bottom: none;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+}
+
+.team-logo {
+  width: 32px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Time A - Vermelho */
+.logo-red {
+  filter: hue-rotate(0deg) saturate(200%) brightness(100%);
+}
+
+/* Time B - Azul */
+.logo-blue {
+  filter: hue-rotate(240deg) saturate(200%) brightness(100%);
+}
+
+/* Time C - Laranja */
+.logo-orange {
+  filter: hue-rotate(30deg) saturate(200%) brightness(100%);
+}
+
+/* Time D - Verde */
+.logo-green {
+  filter: hue-rotate(120deg) saturate(200%) brightness(100%);
+}
+
+/* Time E - Ciano */
+.logo-cyan {
+  filter: hue-rotate(180deg) saturate(200%) brightness(100%);
+}
+
+/* Time F - Azul Claro */
+.logo-light-blue {
+  filter: hue-rotate(200deg) saturate(200%) brightness(100%);
+}
+
+/* Time G e H - Roxo */
+.logo-purple {
+  filter: hue-rotate(270deg) saturate(200%) brightness(100%);
+}
+
+
+.team-name {
+  font-weight: bold;
+  font-size: small;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.versus {
+  margin: 0 10px;
+  color: #888;
+}
