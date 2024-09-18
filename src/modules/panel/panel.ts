@@ -1,36 +1,34 @@
 import "./panel.css";
 
 import RoundNavigation from "../rounds/rounds";
+import Main from "../../core/main";
+
+import { Game, Round } from "../../shared/interfaces";
+import teamColors from "../../shared/utils/teamColors";
 
 import Handlebars from "handlebars";
 
 export default class Panel {
   static logo = "/src/assets/images/team_shield.png";
-  static matches = [
-    {
-      teamA: { name: "Time A", score: 3, logo: this.logo, color: "red" },
-      teamB: { name: "Time B", score: 0, logo: this.logo, color: "blue" },
-    },
-    {
-      teamA: { name: "Time C", score: 1, logo: this.logo, color: "orange" },
-      teamB: { name: "Time D", score: 2, logo: this.logo, color: "green" },
-    },
-    {
-      teamA: { name: "Time E", score: 4, logo: this.logo, color: "cyan" },
-      teamB: { name: "Time F", score: 3, logo: this.logo, color: "light-blue" },
-    },
-    {
-      teamA: { name: "Time G", score: 1, logo: this.logo, color: "purple" },
-      teamB: { name: "Time H", score: 0, logo: this.logo, color: "purple" },
-    },
-  ];
+
+  static teamColors: { [key: string]: string } = teamColors;
 
   static async render() {
-    const templateSource = await fetch("/src/modules/panel/panel.hbs").then((res) =>
-      res.text()
+    const currentRound = RoundNavigation.currentRound;
+    const templateSource = await fetch("/src/modules/panel/panel.hbs").then(
+      (res) => res.text()
     );
+
+    const matches = Main.matches
+      .find((e: Round) => e.round === currentRound)
+      ?.games.map((game: Game) => ({
+        ...game,
+        team_home_logo_class: this.teamColors[game.team_home_id],
+        team_away_logo_class: this.teamColors[game.team_away_id],
+      }));
+
     const template = Handlebars.compile(templateSource);
-    const compiledHTML = template({ matches: this.matches });
+    const compiledHTML = template({ matches });
 
     const app = document.getElementById("app");
 

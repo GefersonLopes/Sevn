@@ -20,6 +20,14 @@
   justify-content: center;
 }
 
+.disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  background-color: #e0e0e0;
+}
+
 .round-button svg {
   width: 24px;
   height: 24px;

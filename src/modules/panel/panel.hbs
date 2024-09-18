@@ -1,19 +1,27 @@
 <ul class="match-list">
   {{#each matches}}
-  <li class="match-item">
-    <div class="team">
-      <img src="{{teamA.logo}}" alt="Logo {{teamA.name}}" class="team-logo logo-{{teamA.color}}" />
-      <span class="team-name">{{teamA.name}}</span>
-    </div>
-    <div class="score">
-      <span class="team-score">{{teamA.score}}</span>
-      <span class="versus">×</span>
-      <span class="team-score">{{teamB.score}}</span>
-    </div>
-    <div class="team">
-      <img src="{{teamB.logo}}" alt="Logo {{teamB.name}}" class="team-logo logo-{{teamB.color}}" />
-      <span class="team-name">{{teamB.name}}</span>
-    </div>
-  </li>
+    <li class="match-item">
+      <div class="team">
+        <img
+          src="/src/assets/images/team_shield.png"
+          alt="Logo {{team_home_name}}"
+          class="team-logo {{team_home_logo_class}}"
+        />
+        <span class="team-name">{{team_home_name}}</span>
+      </div>
+      <div class="score">
+        <span class="team-score">{{team_home_score}}</span>
+        <span class="versus">×</span>
+        <span class="team-score">{{team_away_score}}</span>
+      </div>
+      <div class="team">
+        <img
+          src="/src/assets/images/team_shield.png"
+          alt="Logo {{team_away_name}}"
+          class="team-logo {{team_away_logo_class}}"
+        />
+        <span class="team-name">{{team_away_name}}</span>
+      </div>
+    </li>
   {{/each}}
 </ul>
