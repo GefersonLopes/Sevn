@@ -20,7 +20,7 @@ Este repositório contém o código do frontend para o desafio técnico.
 Antes de começar, você precisa ter o seguinte instalado:
 - [Git](https://git-scm.com/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- [npm] (https://nodejs.org/en/download/package-manager)
+- [npm](https://nodejs.org/en/download/package-manager)
 
 ## Configuração Inicial
 
